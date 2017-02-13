@@ -1,5 +1,9 @@
 'use strict';
 
+/* eslint no-nested-ternary: 0 */
+/* eslint no-negated-condition: 0 */
+var global$1 = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
 var isFunction = (function (value) {
   return typeof value === 'function';
 });
@@ -46,7 +50,7 @@ var createClass = function () {
  */
 
 var secret = {};
-var iterator = window.Symbol ? window.Symbol.iterator : Math.random().toString(36);
+var iterator = global$1.Symbol ? global$1.Symbol.iterator : Math.random().toString(36);
 var _ref = {};
 var toString = _ref.toString;
 

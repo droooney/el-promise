@@ -1,6 +1,6 @@
 {
   "name": "el-promise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "jsnext:main": "lib/Promise.js",
   "main": "build/es5.js",
   "devDependencies": {
