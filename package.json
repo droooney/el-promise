@@ -1,6 +1,6 @@
 {
-  "name": "ajaxer",
-  "version": "0.0.1",
+  "name": "el-promise",
+  "version": "1.0.0",
   "main": "lib/Promise.js",
   "devDependencies": {
     "babel-core": "^6.22.1",
