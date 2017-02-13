@@ -10,7 +10,7 @@ You can install el-promise using npm.
 $ npm install --save el-promise
 ```
 
-You have to use a module bundler
+For browser you have to use a module bundler
 like [Webpack](http://webpack.github.io/ "Webpack")
 or [Browserify](http://browserify.org/ "Browserify") or
  you can insert a script tag in you html like this:
@@ -20,6 +20,12 @@ or [Browserify](http://browserify.org/ "Browserify") or
 ```
 
 that defines global Promise variable.
+
+In NodeJS you can just `require` it:
+
+```js
+const Promise = require('el-promise');
+```
 
 ## Usage
 
@@ -53,3 +59,10 @@ Also if the function returns a promise it will be first resolved
 
 And there is also an abstract Promise#abort method
  (that may be used by other libraries or you).
+ 
+For more convenience there are two functions
+ (Promise.onError and Promise.onUnhandledRejection)
+that are called on any rejection in promise and on an
+ unhandled rejection respectively (with the error argument).
+If the property (Promise.onError or Promise.onUnhandledRejection)
+ is not a function nothing happens.

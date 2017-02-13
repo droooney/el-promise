@@ -27,7 +27,7 @@ gulp.task('default', ['server:dev'], () => {
   });
 });
 
-gulp.task('build', ['build:default', 'build:min']);
+gulp.task('build', ['build:default', 'build:min', 'build:es5']);
 
 gulp.task('test', ['server:test'], () => {
   const watcher = watch(rollup, rollupTestConfig);
@@ -66,5 +66,17 @@ gulp.task('build:min', () => {
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./build'));
+});
+
+gulp.task('build:es5', () => {
+  const config = _.cloneDeep(rollupBuildConfig);
+
+  config.entry = './lib/Promise.js';
+  config.format = 'cjs';
+  config.sourceMap = false;
+
+  return rollupStream(config)
+    .pipe(source('es5.js'))
     .pipe(gulp.dest('./build'));
 });
