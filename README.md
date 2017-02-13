@@ -19,7 +19,7 @@ or [Browserify](http://browserify.org/ "Browserify") or
 <script src="/node_modules/el-promise/build/promise.min.js"></script>
 ```
 
-that defines global Promise variable (if needed).
+that defines global Promise variable.
 
 ## Usage
 
